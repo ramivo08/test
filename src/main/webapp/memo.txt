@@ -1,0 +1,52 @@
+drop table travel;
+create table travel(
+	num number primary key,
+	name varchar2(10),
+	age number,
+	area varchar2(30),
+	style varchar2(15),
+	price varchar2(10)
+);
+
+drop sequence travel_seq;
+create sequence travel_seq 
+minvalue 1
+start with 1
+nocache;
+
+insert into travel
+values(travel_seq.nextval, '수지',21, '동남아','패키지','200~300');
+
+commit;
+
+select * from travel;
+
+col num for 99
+col name for a10
+col age for 99999
+col area for a12
+col style for a10
+col price for a10
+select * from travel;
+
+어노테이션 종류 정리해두기
+@Controller
+@RequestMapping
+@Autowired
+@Qualifier
+@Component
+@NotEmpty
+@Valid
+@RequestParam
+@Lengh
+@Size
+@WebServlet
+@ModelAttribute
+@Pattern
+@Max
+@Min
+@NotNull
+@NotBlank
+@Override
+@WebInitParam
+@Range //값으로 범위를 설정할때
